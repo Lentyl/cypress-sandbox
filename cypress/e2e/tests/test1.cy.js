@@ -14,6 +14,8 @@ describe('sandbox smoke tests', () => {
         cy.get(HomePage.home_nav_link).invoke('attr', 'style').should('equal', 'color: orange;')
         cy.get(HomePage.login_nav_link).click();
         cy.get(LoginPage.new_user_signup_text).should('have.text', 'New User Signup!');
+        LoginPage.signup('Mariusz', 'mar88@wp.pl')
+        cy.get(LoginPage.enter_account_information).should('have.text', 'Enter Account Information')
     })
 })
 
