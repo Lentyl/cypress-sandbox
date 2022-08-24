@@ -1,6 +1,8 @@
 import BasePage from './BasePage'
 import ShopPage from './ShopPage';
 
+//TODO: if you have problems with linting try adding "/// <reference types="cypress" />" on top of your file, that cointains cypress code.
+
 export default class HomePage extends BasePage {
 
     static carousell_slides = 'div.n2-ss-slider-3 > [data-slide-duration="0"';

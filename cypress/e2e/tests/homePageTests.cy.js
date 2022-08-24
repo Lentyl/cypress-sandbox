@@ -16,6 +16,7 @@ describe('sandbox smoke tests', () => {
         cy.visit(testData.web_site_address)
     })
 
+    // TODO: everywhere you reapet HomePage.navigateToHomePage(); so move it to beforeEach
     it('Home Page - with three Sliders only', () => {
         HomePage.navigateToHomePage();
         cy.get(HomePage.carousell_slides).should('have.length', 3);
@@ -41,6 +42,7 @@ describe('sandbox smoke tests', () => {
         cy.get(ProductPage.add_to_basket_button).should('have.text', 'Add to basket');
         cy.get(ProductPage.description_tab).click();
         cy.get(ProductPage.description_header).should('have.text', 'Product Description');
+        // use should
         cy.get(ProductPage.description_paragraph).then((el) => {
             assert.include(el.text(), 'The Selenium WebDriver Recipes book is a quick problem-solving guide to automated testing web applications with Selenium WebDriver.');
         });
@@ -148,6 +150,7 @@ describe('sandbox smoke tests', () => {
         cy.get(ProductPage.cart_nav_link).click();
         cy.get(CartPage.checkout_button).should('have.text', '\n\tProceed to Checkout');
         cy.get(CartPage.update_basket_button).should('be.disabled');
+        // save 1 line and chain clear() with type()        cy.get(CartPage.quantity_input).clear().type(2)
         cy.get(CartPage.quantity_input).clear();
         cy.get(CartPage.quantity_input).type(2);
         cy.get(CartPage.update_basket_button).should('not.be.disabled');
@@ -227,6 +230,7 @@ describe('sandbox smoke tests', () => {
         CartPage.checkIfSubtotalIsLowerThanTotalAndSubtotalPlusTaxIsEqualToTotal();
         cy.get(CartPage.checkout_button).click();
         PaymentPage.headingdCheck();
+        // create fixture for this, dont pass 6 parameters everytime
         PaymentPage.fillInBillingFields(
             testData.first_name,
             testData.last_name,

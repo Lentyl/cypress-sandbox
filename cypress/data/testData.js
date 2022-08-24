@@ -1,3 +1,4 @@
+//TODO: https://docs.cypress.io/api/commands/fixture
 export default class TestData {
     web_site_address = 'https://practice.automationtesting.in';
     user_name = "Mariusz";
