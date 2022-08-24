@@ -1,10 +1,15 @@
 export default class TestData {
     web_site_address = 'https://practice.automationtesting.in';
     user_name = "Mariusz";
+    registration_user_email = "mar02@wp.pl";
+    registration_user_password = "mar666PodWC%%%";
     user_email = "mar90@wp.pl";
     user_password = "mar666PodWC%%%";
     incorrect_email = "mar91@wp.pl";
-    incorrect_password = "mar666PodWC%%%";
+    incorrect_password = "mar555PodWC%%%";
+    invalid_email = 'mar91wp.pl';
+    capital_letter_email = "Mar91@wp.pl";;
+    capital_letter_password = "Mar666PodWC%%%";
     first_name = "Mariusz";
     last_name = "Podgorski";
     company = "Inex.ltd";
