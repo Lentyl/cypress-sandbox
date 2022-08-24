@@ -15,7 +15,7 @@ export default class MyAccount extends BasePage {
 
     static emailInputFormValidation = () => {
         cy.get(MyAccount.registration_form).within(() => {
-            cy.get(MyAccount.register_email_input).click().invoke('prop', 'validationMessage')
+            cy.get(MyAccount.register_email_input).invoke('prop', 'validationMessage')
                 .should("Please include an '@' in the email address. 'mar91wp.pl' is missing an '@'.")
         })
     }
