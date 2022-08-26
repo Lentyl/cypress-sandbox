@@ -1,5 +1,6 @@
 import BasePage from './BasePage'
 
+// TODO: this rather looks like RegisterPage, rather than LoginPage
 export default class LoginPage extends BasePage {
 
     static new_user_signup_text = '.signup-form > h2';

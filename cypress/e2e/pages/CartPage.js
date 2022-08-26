@@ -15,6 +15,8 @@ export default class CartPage extends BasePage {
     static update_basket_button = 'input[value="Update Basket"]';
 
 
+    // TODO: this nesting is rather bad practice, and you are doing same operation for your variables subtotal, tax, total, so it could be new function
+    // this may help https://docs.cypress.io/api/commands/should#Function
     static checkIfSubtotalIsLowerThanTotalAndSubtotalPlusTaxIsEqualToTotal = () => {
         cy.get(CartPage.subtotal_price).then($subtotal => {
             const subtotal = parseInt($subtotal.text().substring(1));

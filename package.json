@@ -13,6 +13,7 @@
     "cypress-xpath": "^2.0.1"
   },
   "devDependencies": {
+    // 10.4 cypress has build in file upload methods
     "cypress-file-upload": "^5.0.8"
   }
 }

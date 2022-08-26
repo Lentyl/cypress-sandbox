@@ -59,6 +59,7 @@ export default class PaymentPage extends BasePage {
 
     static paymentOptionCheck = () => {
         cy.get(PaymentPage.direct_bank_transfer_radio_button).click();
+        // TODO: why just dont use cy.get(PaymentPage.direct_bank_transfer_text).should("have.text", 'Make your payment directly into our bank account.')
         cy.get(PaymentPage.direct_bank_transfer_text).then(($el) => {
             assert.include($el.text(), 'Make your payment directly into our bank account.');
         });

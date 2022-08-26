@@ -13,9 +13,13 @@ export default class ProductPage extends BasePage {
     value = "";
 
     static typeToInputStockQuantityPlusOne = () => {
+        // overall in OOP you will more ofen see people using this.stock_limit instead of ProductPage.stock_limit 
+        // 'this' means you are working in context of your Class outsite of it you would use ProductPage
         cy.get(ProductPage.stock_limit).then($limit => {
             const quantytyInStock = $limit.text().split(" ").shift();
             ProductPage.value = quantytyInStock;
+
+            // whould be cleaner to move this outside promise
             cy.get(ProductPage.quantity_input).clear();
             cy.get(ProductPage.quantity_input).type(parseInt(quantytyInStock) + 1);
         })

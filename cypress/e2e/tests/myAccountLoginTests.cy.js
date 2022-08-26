@@ -79,6 +79,7 @@ describe('My accountt sandbox tests', () => {
         cy.get(WelcomePage.welcome_text).should('have.text', '\n\tHello mar90 (not mar90? Sign out)');
         cy.get(WelcomePage.sign_out_link).click();
         cy.go('back')
+        // TODO: conditional testing is most often bad practice https://docs.cypress.io/guides/core-concepts/conditional-testing 
         try {
             cy.get(WelcomePage.welcome_text).should('have.text', '\n\tHello mar90 (not mar90? Sign out)').on('uncaught:exception', (err, runnable) => {
                 return false;
